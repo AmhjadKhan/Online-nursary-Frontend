@@ -1,14 +1,18 @@
-import Footer from "./components/ui/Footer"
-import Header from "./components/ui/Header"
+import { Outlet } from "react-router-dom";
+import Container from "./components/layout/Container";
+import Footer from "./components/ui/Footer";
+import Header from "./components/ui/Header";
 
 const App = () => {
   return (
     <div>
       <Header />
-      <h1>this is Nursary projec</h1>
+      <Container>
+        <Outlet />
+      </Container>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
