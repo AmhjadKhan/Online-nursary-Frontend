@@ -2,7 +2,7 @@
 const App = () => {
   return (
     <div>
-      <h1>this is Nursary project</h1>
+      <h1>this is Nursary projec</h1>
     </div>
   )
 }
