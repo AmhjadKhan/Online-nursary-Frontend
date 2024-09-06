@@ -10,7 +10,7 @@ const Header = () => {
     setClick(!click);
   };
   return (
-    <div className="flex justify-center w-full bg-gray-500">
+    <div className="flex justify-center w-full bg-green-500">
       <div className="navbar  sm:container">
         <div className="navbar-start">
           <div className="dropdown">
@@ -78,27 +78,27 @@ const Header = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li className="text-base text-[#111111] mr-8">
-              <Link className="text-xl font-bold" to="/">
+              <Link className="text-xl font-bold " to="/">
                 Home
               </Link>
             </li>
-            <li className="text-xl font-bold mr-8">
+            <li className="text-xl font-bold mr-8 border-l-2">
               <Link to="/products">Products</Link>
             </li>
-            <li className="text-xl font-bold mr-8">
+            <li className="text-xl font-bold mr-8 border-l-2">
               <Link to="/cart">Cart</Link>
             </li>
-            <li className="text-xl font-bold mr-8">
+            <li className="text-xl font-bold mr-8 border-l-2">
               <ScrollLink to="category" smooth={true} duration={500}>
                 Category
               </ScrollLink>
             </li>
-            <li className="text-xl font-bold">
+            <li className="text-xl font-bold border-l-2">
               <ScrollLink to="gallery" smooth={true} duration={500}>
                 Contact Us
               </ScrollLink>
             </li>
-            <li className="text-xl font-bold mr-8">
+            <li className="text-xl font-bold mr-8 border-l-2">
               <Link to="/dashboard">Dashboard</Link>
             </li>
           </ul>
