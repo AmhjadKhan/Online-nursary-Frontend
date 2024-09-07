@@ -6,6 +6,7 @@ import AboutUs from "../pages/Aboutus/AboutUs"
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Product from "../pages/product/Product";
 import ContactUs from "../pages/contactus/ContactUs";
+import Cart from "../pages/Cart/Cart";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
         {
           path:"/products",
           element:<Product />
+        },
+        {
+          path:'/cart',
+          element:<Cart />
         },
        {
         path:'/about-us',
