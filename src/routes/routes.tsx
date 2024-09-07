@@ -4,7 +4,8 @@ import Home from "../pages/Home";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import AboutUs from "../pages/Aboutus/AboutUs"
 import Dashboard from "../pages/Dashboard/Dashboard";
-import Product from "../pages/product/product";
+import Product from "../pages/product/Product";
+import ContactUs from "../pages/contactus/ContactUs";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
        {
         path:'/about-us',
         element:<AboutUs />
+       },
+       {
+        path:'/contact-us',
+        element:<ContactUs />
        },
        {
          path:'/dashboard',
