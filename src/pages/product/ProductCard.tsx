@@ -1,19 +1,53 @@
 import { Card, Rate } from "antd";
 import { TProduct } from "./Product.interface";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../redux/hooks";
+import { addProduct } from "../../redux/features/cartSlice";
 const { Meta } = Card;
-const ProductCard = ({ item }) => {
-  const { thumbnail, name, description, price, rating }: TProduct = item;
-  console.log("item: ", item);
+
+const ProductCard = ({ item }: any) => {
+  const dispatch = useAppDispatch();
+  const {
+    thumbnail,
+    name,
+    description,
+    price,
+    rating,
+    _id,
+    stock,
+    availabilityStock,
+  }: TProduct = item;
+  // const cartProducts = useAppSelector(selectCurrentCart).products;
+  const navigate = useNavigate();
+  // console.log("item: ", item);
+  const onViewDetails = (id: string) => {
+    navigate(`/product/${id}`);
+  };
+
+  const handleOnClickDetails = (productData: TProduct) => {
+    dispatch(addProduct(productData));
+  };
+
   return (
     <Card
       hoverable
       style={{ width: "100%", maxWidth: 320 }}
       actions={[
         <div className="flex flex-col gap-y-4 md:gap-y-0 md:flex-row justify-between mx-4">
-          <button className="px-6 py-2 text-sm font-semibold text-white bg-softLime rounded shadow-md border-2 border-softLime md:text-base hover:bg-white hover:text-softLime">
-            Add to Cart
+          <button
+            className="custom-button-primary"
+            onClick={() => handleOnClickDetails(item)}
+            disabled={stock === 0 || availabilityStock === false}
+          >
+            {stock === 0 || availabilityStock === false
+              ? "Stock out"
+              : "Add to Cart"}
           </button>
-          <button className="px-6 py-2 text-sm font-semibold text-black bg-gray-300 rounded shadow-md border-2 border-gray-300 md:text-base hover:bg-white hover:text-gray-600">
+
+          <button
+            onClick={() => onViewDetails(_id as string)}
+            className="px-6 py-2 text-sm font-semibold text-black bg-gray-300 rounded shadow-md border-2 border-gray-300 md:text-base hover:bg-white hover:text-gray-600"
+          >
             View Details
           </button>
         </div>,
@@ -32,4 +66,5 @@ const ProductCard = ({ item }) => {
     </Card>
   );
 };
+
 export default ProductCard;
