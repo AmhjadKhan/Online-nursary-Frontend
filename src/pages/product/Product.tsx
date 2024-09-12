@@ -1,17 +1,37 @@
 import { useGetProductsQuery } from "../../redux/api/api";
+import { TProduct } from "./Product.interface";
+import ProductCard from "./ProductCard";
 
 const Product = () => {
-  const { data: products} = useGetProductsQuery({});
-  console.log("product: ", products?.data?.result);
+  const {
+    data: products,
+    isSuccess: isProductSuccess,
+    isLoading,
+  } = useGetProductsQuery({});
+
+  console.log("product: ", products?.data?.result?.length);
+  console.log("isSuccess: ", isProductSuccess);
+  console.log("isLoading: ", isLoading);
+
   return (
-    <div className="container flex flex-col mx-auto p-6 lg:flex-row lg:mb-0">
-      <div className="container mx-auto mt-16 px-6">
+    <div className="container mx-auto p-6 lg:flex-row lg:mb-0">
+      <div className="container mx-auto mt-4 px-6">
         <h2 className="mb-6 text-4xl font-semibold text-center uppercase">
-          Products page
+          Products
         </h2>
         <p className="max-w-md mx-auto text-center text-grayishBlue">
-         hlw product
+          hlw trees
         </p>
+      </div>
+
+      <div className="mt-12 flex justify-center">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8">
+          {isProductSuccess &&
+            products?.data?.result.length > 0 &&
+            products?.data?.result.map((item: TProduct) => (
+              <ProductCard key={item.id} item={item} />
+            ))}
+        </div>
       </div>
     </div>
   );
