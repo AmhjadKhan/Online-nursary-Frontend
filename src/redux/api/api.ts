@@ -2,18 +2,34 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const baseApi = createApi({
   reducerPath: "baseApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api/v4" }),
+  baseQuery: fetchBaseQuery({
+     baseUrl: "http://localhost:5000/api/v4",
+  }),
   tagTypes: ["products"],
   endpoints: (builder) => ({
     getProducts: builder.query({
       query: (options) => {
         const params = new URLSearchParams();
-        if (options.limit) {
-          params.append("limit", options.limit);
-          // console.log("limit: ", options.limit);
+        if (options?.page) {
+          params.append("page", options.page);
         }
-        if (options.skip) {
-          params.append("skip", options.skip);
+        if (options?.limit) {
+          params.append("limit", options.limit);
+          // console.log("skip: ", options.skip);
+        }
+        if (options?.searchTerm) {
+          params.append("searchTerm", options.searchTerm);
+          // console.log("skip: ", options.skip);
+        }
+        if (options?.sortBy) {
+          params.append("sort", options.sortBy);
+          // console.log("skip: ", options.skip);
+        }
+        if (options?.filterObject?.name && options?.filterObject?.value) {
+          params.append(
+            options?.filterObject?.name,
+            options?.filterObject?.value
+          );
           // console.log("skip: ", options.skip);
         }
 
@@ -32,7 +48,7 @@ export const baseApi = createApi({
         //   params.append("priority", priority);
         // }
         return {
-          url: `/product/${id}`,
+          url: `/products/${id}`,
           method: "GET",
           //   params: params,
         };
@@ -44,12 +60,46 @@ export const baseApi = createApi({
         method: "GET",
       }),
     }),
+    postNewProduct: builder.mutation({
+      query: (data) => ({
+        url: `/products`,
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ["products"],
+    }),
     updateProduct: builder.mutation({
       query: (options) => ({
-        url: `/products/${options.id}`,
+        url: `/products/${options.currentId}`,
         method: "PATCH",
-        body: options.data,
+        body: options.updatedValues,
       }),
+      invalidatesTags: ["products"],
+    }),
+    DeleteProduct: builder.mutation({
+      query: (id) => ({
+        url: `/products/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["products"],
+    }),
+    getAllProductCategoriesName: builder.query({
+      query: () => {
+        return {
+          url: `/categories-product/name`,
+          method: "GET",
+        };
+      },
+    }),
+    updateStockByQuantityProducts: builder.mutation({
+      query: (data) => {
+        console.log("updateStockByQuantityProducts: ", data);
+        return {
+          url: `/products/update-stock`,
+          method: "POST",
+          body: data,
+        };
+      },
     }),
   }),
 });
@@ -58,5 +108,9 @@ export const {
   useGetProductsQuery,
   useGetProductDetailsQuery,
   useGetProductCategoriesQuery,
+  usePostNewProductMutation,
   useUpdateProductMutation,
+  useDeleteProductMutation,
+  useGetAllProductCategoriesNameQuery,
+  useUpdateStockByQuantityProductsMutation,
 } = baseApi;
