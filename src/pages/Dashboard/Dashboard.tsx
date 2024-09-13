@@ -1,8 +1,9 @@
+import DashboardTable from "./DashboardTable"
 
 const Dashboard = () => {
   return (
-    <div>
-      <h1>this is dashboard</h1>
+    <div className="my-4">
+      <DashboardTable />
     </div>
   )
 }
