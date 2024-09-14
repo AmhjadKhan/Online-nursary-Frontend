@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/images/images.jfif";
+import { ShoppingCartOutlined } from "@ant-design/icons"; // Import the cart icon
+
 
 const Header = () => {
   const [click, setClick] = useState(false);
@@ -73,9 +75,6 @@ const Header = () => {
               <Link to="/products">Products</Link>
             </li>
             <li className="text-xl border-r-2 font-bold text-[#111111] mr-8">
-              <Link to="/cart">Cart</Link>
-            </li>
-            <li className="text-xl border-r-2 font-bold text-[#111111] mr-8">
               <Link to="/about-us">About Us</Link>
             </li>
             <li className="text-xl border-r-2 font-bold text-[#111111] mr-8">
@@ -83,6 +82,9 @@ const Header = () => {
             </li>
             <li className="text-xl font-bold text-[#111111] mr-8">
               <Link to="/dashboard">Dashboard</Link>
+            </li>
+            <li className="text-xl font-bold text-[#111111] mr-8">
+              <Link to="/cart"><ShoppingCartOutlined /></Link>
             </li>
           </ul>
         </div>
