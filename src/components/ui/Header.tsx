@@ -9,7 +9,7 @@ const Header = () => {
     setClick(!click);
   };
   return (
-    <div className="flex justify-center w-full bg-green-500">
+    <div className="flex justify-center w-full bg-white">
       <div className="navbar  sm:container">
         <div className="navbar-start">
           <div className="dropdown">

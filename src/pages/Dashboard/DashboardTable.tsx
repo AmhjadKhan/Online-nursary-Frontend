@@ -11,7 +11,7 @@ import { TProduct } from "../product/Product.interface";
 import type { GetProp, TableProps } from "antd";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sooner"; // Adjust the path accordingly
-// import { getColumns } from "./utils/columns";
+import { getColumns } from "./utils/column";
 import Loading from "../../components/ui/Loading";
 import NoDataFound from "../../components/ui/NoDataFound";
 
