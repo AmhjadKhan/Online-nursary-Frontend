@@ -38,7 +38,7 @@ const Cart = () => {
       ) : (
         <div>
           <table className="table-auto w-full bg-lime-100 rounded-lg overflow-hidden shadow-lg">
-            <thead className="bg-veryDarkBlue text-white ">
+            <thead className="bg-veryDarkBlue text-black ">
               <tr>
                 <th className="px-4 py-2">No.</th>
                 <th className="px-4 py-2">Image</th>
@@ -87,7 +87,7 @@ const Cart = () => {
                         -
                       </Button>
 
-                      <div className="bg-veryDarkBlue text-white rounded-md px-4 py-1">
+                      <div className="bg-veryDarkBlue text-black rounded-md px-4 py-1">
                         {product?.quantity}
                       </div>
                       <Button
@@ -111,9 +111,9 @@ const Cart = () => {
 
           <div className="flex justify-end my-4">
             <div className="">
-              <div className="bg-veryDarkBlue  rounded-md px-8 py-4 my-4 text-gray-300 font-semibold">
+              <div className="bg-veryDarkBlue  rounded-md px-8 py-4 my-4 text-black font-semibold">
                 Total:{" "}
-                <span className="text-gray-100">${calculateTotalPrice()}</span>
+                <span className="text-black">${calculateTotalPrice()}</span>
               </div>
 
               <div className="">

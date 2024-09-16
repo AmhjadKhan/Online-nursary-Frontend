@@ -129,9 +129,9 @@ const CartCheckout = () => {
             </Form.Item>
 
             <div className="flex justify-end">
-              <div className="bg-veryDarkBlue w-3/4 text-center  rounded-md px-8 py-2 mb-4 text-gray-300 font-semibold">
+              <div className="bg-veryDarkBlue w-3/4 text-center  rounded-md px-8 py-2 mb-4 text-black text-2xl font-bold">
                 Total:{" "}
-                <span className="text-gray-100">${calculateTotalPrice()}</span>
+                <span className="text-black">${calculateTotalPrice()}</span>
               </div>
             </div>
 
