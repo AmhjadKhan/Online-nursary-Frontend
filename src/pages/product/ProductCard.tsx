@@ -41,7 +41,7 @@ const ProductCard = ({ item }: any) => {
         // Render buttons for "Add to Cart" and "View Details"
         <div className="flex flex-col gap-y-4 md:gap-y-0 md:flex-row justify-between mx-4">
           <button
-            className="custom-button-primary"
+            className=" border-2 border-black font-bold p-2"
             onClick={() => handleOnClickDetails(item)}
             disabled={stock === 0 || availabilityStock === false}
           >

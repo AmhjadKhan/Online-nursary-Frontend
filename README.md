@@ -1,50 +1,28 @@
-# online nursary frontend
+# Nursery Item Booking Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## MERN Stack Project
 
-Currently, two official plugins are available:
+![Project Preview](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWX49ucc3FbbA4pYBRytRz-oCG-pSSIc347Q&s)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![VSCode](https://img.shields.io/badge/VSCode-007ACC?logo=visual-studio-code&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?logo=tailwind-css&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
 
-## Expanding the ESLint configuration
+## Live Links
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Live Site**: [Live Site Link](https://your-live-site-link.com)
+- **GitHub Client Repository**: [Client Repo Link](https://github.com/AmhjadKhan/resturent_clint/)
+- **GitHub Server Repository**: [Server Repo Link](https://github.com/AmhjadKhan/Resturent_server)
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Cloning the Repository
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+```bash
+npm install
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
