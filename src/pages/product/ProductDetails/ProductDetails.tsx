@@ -4,13 +4,13 @@ import { TProduct } from "../Product.interface";
 import { Image, Rate, Tag } from "antd";
 import ProductDetailsTab from "./ProductDetailsTab";
 import { ArrowLeftOutlined } from "@ant-design/icons";
-import { useAppDispatch } from "../../../redux/hooks";
-import { addProduct } from "../../../redux/features/cartSlice";
+// import { useAppDispatch } from "../../../redux/hooks";
+// import { addProduct } from "../../../redux/features/cartSlice";
 import NoDataFound from "../../../components/ui/NoDataFound";
 
 const ProductDetails = () => {
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
   const { id } = useParams();
   const { data, isLoading, isError } = useGetProductDetailsQuery(id);
   const productData = data?.data[0];
@@ -38,10 +38,10 @@ const ProductDetails = () => {
     stock,
   }: TProduct = productData;
 
-  const handleOnClickDetails = (productData: TProduct) => {
-    dispatch(addProduct(productData));
-    // console.log("handleOnClickDetails: ", productData);
-  };
+  // const handleOnClickDetails = (productData: TProduct) => {
+  //   dispatch(addProduct(productData));
+  //   // console.log("handleOnClickDetails: ", productData);
+  // };
 
   return (
     <div className="container mx-auto my-4">
@@ -109,7 +109,7 @@ const ProductDetails = () => {
               </span>
             </div>
             <div>
-              <button
+              {/* <button
                 className="custom-button-primary"
                 onClick={() => handleOnClickDetails(productData)}
                 disabled={stock === 0 || availabilityStock === false}
@@ -117,7 +117,7 @@ const ProductDetails = () => {
                 {stock === 0 || availabilityStock === false
                   ? "Stock out"
                   : "Add to Cart"}
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -134,7 +134,7 @@ const ProductDetails = () => {
           <span>
             <ArrowLeftOutlined className="me-2 group-hover:animate-ping " />
           </span>
-          <span>Go Back</span>
+          <span className="border-2 border-red-500 p-7 font-bold">Go Back</span>
         </button>
       </div>
     </div>

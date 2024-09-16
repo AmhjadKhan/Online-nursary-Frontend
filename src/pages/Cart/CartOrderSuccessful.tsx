@@ -6,7 +6,7 @@ const CartOrderSuccessful = () => {
     <Result
       status="success"
       title="Successfully Purchased Order!"
-      subTitle="Order number: 2017182818828182881 Your order will arrive at your address within 2-7 days, please wait."
+      subTitle="Order number: 12345 Your order will arrive at your address within 2-7 days, please wait."
       extra={[
         <NavLink to={"/"}>
           <Button key="buy">Go to home</Button>
