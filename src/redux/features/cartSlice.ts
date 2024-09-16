@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { TProduct } from "../../pages/product/Product.interface";
-import { toast } from "sooner";
+import { toast } from "react-hot-toast";
 import { RootState } from "../store";
 
 type TCartState = {
@@ -25,7 +25,7 @@ const cartSlice = createSlice({
         if (existingProduct.stock > 0) {
           existingProduct.quantity = (existingProduct.quantity ?? 0) + 1;
           existingProduct.stock -= 1;
-          toast.info("Increased product quantity", { duration: 3000 });
+          toast("Increased product quantity", { duration: 3000 });
         } else {
           toast.error("Out of stock, try another product.", { duration: 3000 });
         }

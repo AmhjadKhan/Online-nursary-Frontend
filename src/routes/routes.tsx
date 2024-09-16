@@ -9,6 +9,7 @@ import ContactUs from "../pages/contactus/ContactUs";
 import Cart from "../pages/Cart/Cart";
 import ProductDetails from "../pages/product/ProductDetails/ProductDetails";
 import CartCheckout from "../pages/Cart/CartCheckout";
+import CartOrderSuccessful from "../pages/Cart/CartOrderSuccessful";
 
 const router = createBrowserRouter([
     {
@@ -28,14 +29,6 @@ const router = createBrowserRouter([
           path: "/product/:id",
           element: <ProductDetails />
         },
-        {
-          path:'/cart',
-          element:<Cart />
-        },
-        {
-          path:'/cart-checkout',
-          element:<CartCheckout />
-        },
        {
         path:'/about-us',
         element:<AboutUs />
@@ -47,7 +40,19 @@ const router = createBrowserRouter([
        {
          path:'/dashboard',
          element:<Dashboard />
-       }
+       },
+       {
+        path:'/cart',
+        element:<Cart />
+      },
+      {
+        path:'/cart-checkout',
+        element:<CartCheckout />
+      },
+      {
+        path: "/cart/order-successful",
+        element: <CartOrderSuccessful />
+      },
       ],
     },
   ]);

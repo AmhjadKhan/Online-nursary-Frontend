@@ -2,7 +2,7 @@ import type { FormProps } from "antd";
 import { Button, Form, Input, Select } from "antd";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { clearCart, selectCurrentCart } from "../../redux/features/cartSlice";
-import { toast } from "sooner";
+import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useUpdateStockByQuantityProductsMutation } from "../../redux/api/api";
 import Loading from "../../components/ui/Loading";

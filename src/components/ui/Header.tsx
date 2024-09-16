@@ -2,10 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/images/images.jfif";
 import { ShoppingCartOutlined } from "@ant-design/icons"; // Import the cart icon
-
+import { useAppSelector } from "../../redux/hooks";
+import { Badge } from "antd";
+import { selectCurrentCart } from "../../redux/features/cartSlice";
 
 const Header = () => {
   const [click, setClick] = useState(false);
+  const { products } = useAppSelector(selectCurrentCart);
+
 
   const menuClick = () => {
     setClick(!click);
@@ -58,9 +62,9 @@ const Header = () => {
             </ul>
           </div>
           <Link to="/" className="text-xl font-bold text-[#111111] ">
-          <div>
-            <img className="w-[50px] ml-6" src={Logo} alt="" />
-            <h2 className="">Online Nursary</h2>
+            <div>
+              <img className="w-[50px] ml-6" src={Logo} alt="" />
+              <h2 className="">Online Nursary</h2>
             </div>
           </Link>
         </div>
@@ -84,7 +88,11 @@ const Header = () => {
               <Link to="/dashboard">Dashboard</Link>
             </li>
             <li className="text-xl font-bold text-[#111111] mr-8">
-              <Link to="/cart"><ShoppingCartOutlined /></Link>
+              <Link to="/cart">
+                <Badge count={products?.length}>
+                  <ShoppingCartOutlined className="text-2xl" />
+                </Badge>
+              </Link>
             </li>
           </ul>
         </div>

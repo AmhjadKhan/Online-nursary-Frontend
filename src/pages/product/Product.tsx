@@ -175,8 +175,6 @@ const Product = () => {
           <AutoComplete
             popupMatchSelectWidth={252}
             style={{ width: 300 }}
-            // onSelect={onSelect}
-            // onSearch={(text) => setAnotherOptions(getPanelValue(text))}
             onChange={handleSearch}
 
             // size="large"
