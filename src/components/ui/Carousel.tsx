@@ -18,7 +18,7 @@ const Carousel = () => {
   }, [totalSlides]);
 
   // Updated goToSlide function
-  const goToSlide = (slideNumber) => {
+  const goToSlide = (slideNumber: any) => {
     if (slideNumber >= 1 && slideNumber <= totalSlides) {
       setCurrentSlide(slideNumber);
     }

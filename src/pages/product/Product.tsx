@@ -156,8 +156,7 @@ const Product = () => {
           Products
         </h2>
         <p className="max-w-md mx-auto text-center text-grayishBlue">
-         hlw product
-        </p>
+          This is product Section</p>
       </div>
 
       {/* SearchBar and Filter */}
