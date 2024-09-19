@@ -26,4 +26,6 @@
 
 ```bash
 npm install
+```
 
+# Happy 😎 Codding
